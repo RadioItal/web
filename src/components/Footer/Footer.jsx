@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FaFacebook, FaTwitter, FaInstagram } from 'react-icons/fa';
-import './Footer.css'; // Import the CSS file for footer styles
+import './Footer.css'; 
 
 function Footer() {
   return (
@@ -22,7 +22,7 @@ function Footer() {
           <FaInstagram />
         </a>
       </div>
-      <p className="footer-text">© 2023 Your Website. All rights reserved.</p>
+      <p className="footer-text">© 2023 RadioItal.com All rights reserved.</p>
     </footer>
   );
 }

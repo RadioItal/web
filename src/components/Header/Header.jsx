@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FiHome, FiMenu } from 'react-icons/fi';
 import logo from '../../assets/logo radioital negro.png';
-import './Header.css'; // Import the CSS file for header styles
+import './Header.css';
 
 function Header() {
   const [isMenuOpen, setMenuOpen] = useState(false);
