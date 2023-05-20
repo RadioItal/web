@@ -1,13 +1,24 @@
-
 import React from 'react';
-import Home from './Home.js';;
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { createRoot } from 'react-dom';
+
+import Header from './components/Header/Header.jsx';
+import Home from './components/Home/Home.js';
 
 const App = () => {
   return (
-    <div className="app">
-      <Home />
-    </div>
+    <Router>
+      <div className="app">
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          {/* Add more routes and components for other pages */}
+        </Routes>
+      </div>
+    </Router>
   );
 };
+
+createRoot(document.getElementById('root')).render(<App />);
 
 export default App;
