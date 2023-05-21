@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FiHome, FiMenu } from 'react-icons/fi';
-import logo from '../../assets/logo radioital negro.png';
+import logo from '../../assets/images/logo radioital negro.png';
 import './Header.css';
 
 function Header() {
