@@ -1,0 +1,145 @@
+.sign-in {
+    border: none;
+    background-color: transparent;
+}
+.sign-in > img {
+    height: 30px;
+    width: auto;
+}
+.sign-out {
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: #88dded;
+    border: 1px solid #1c2c4c;
+    background-color: #1c2c4c;
+    font-weight: 600;
+}
+  
+/* welcome page */
+.welcome {
+    padding: 30px;
+    text-align: center;
+    margin-top: 40px;
+    color: #7cc5d9;
+}
+.welcome :is(h2, p, img) {
+    margin-bottom: 20px;
+}
+  
+/* chat component */
+.messages-wrapper {
+    padding: 0 15px 0 33px;
+    overflow-y: auto;
+    width: 100%;
+}
+.chat-bubble {
+    border-radius: 20px 20px 20px 0;
+    padding: 15px;
+    background-color: #7cc5d9;
+    color: #1c2c4c;
+    width: max-content;
+    max-width: calc(100% - 50px);
+    box-shadow: -2px 2px 1px 1px #4c768d;
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+.chat-bubble.right {
+    margin-left: auto;
+    border-radius: 20px 20px 0 20px;
+    background-color: #fff;
+    box-shadow: -2px 2px 1px 1px #88dded;
+}
+.chat-bubble__left {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+.user-name {
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+    color: #1c2c4c;
+}
+.user-message {
+    word-break: break-all;
+}
+.message-time {
+    display: block;
+    text-align: right;
+}
+  
+/* send message */
+.send-message {
+    position: relative;
+    bottom: 0px;
+    width: 98%;
+    padding: 9px 6px;
+    background-color: #000000;
+    display: flex;
+}
+.send-message > textarea {
+    height: 40px;
+    padding: 10px 10px;
+    border-radius: 5px 0 0 5px;
+    border: none;
+    flex-grow: 1;
+    background-color: white;
+    color: #1c2c4c;
+    font-size: 1rem;
+}
+.send-message > textarea:placeholder {
+    color: #ddd;
+}
+.send-message > :is(textarea, button):focus {
+    outline: none;
+    border-bottom: 1px solid #7cc5d9;
+}
+.send-message > button {
+    padding: 5px 10px;
+    border-radius: 0 5px 5px 0;
+    color: #fff;
+    border: 1px solid #fff;
+    background-color: #169449;
+    font-weight: 600;
+}
+
+.navBox {
+    height: 100%;
+    background: url("/src/assets/images/background_player.66a3e5c.svg"),linear-gradient(90deg,#14a76c,#ffe400 50%,#ff652f);
+    background-size: cover;
+    position: fixed;
+    top: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+    width: 0;
+    transition: all 1s;
+}
+
+.navBox h3{
+    color:white;
+    -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+}
+  
+.open {
+    width: 25%;
+}
+
+.collapse {
+    transition: ease-out 1s;
+}
+
+.btnChat{
+    position: fixed !important;
+    bottom: 0 !important;
+    border-radius: 0 !important;
+    background-color: #169449 !important;
+    color: white !important;
+    left: 0 !important;
+}
