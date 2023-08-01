@@ -1,4 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
+import '../Player/Player.css';
+import MiniPlayer from '../Player/MiniPlayer';
 
 const CentovaStreamingPlayer = ({ streamUrl }) => {
   const audioRef = useRef(null);
@@ -77,34 +79,33 @@ const CentovaStreamingPlayer = ({ streamUrl }) => {
           <div className="metadata">{metadata}</div>
           {streamDetails && (
             <div className="stream-details">
-              <div>Artist: {streamDetails.track.artist}</div>
-              <div>Title: {streamDetails.track.title}</div>
+              <div>Artista: {streamDetails.track.artist}</div>
               <div>Album: {streamDetails.track.album}</div>
-              <div>Listeners: {streamDetails.listeners}</div>M
+              <div>Oyentes: {streamDetails.listeners}</div>
             </div>
           )}
         </>
       )}
-      <audio
-        ref={audioRef}
-        src={streamUrl}
-        onEnded={handleAudioEnded}
-      ></audio>
+      <audio ref={audioRef} src={streamUrl} onEnded={handleAudioEnded}></audio>
       <div className="controls">
         <button onClick={handlePlayPause}>{isPlaying ? 'Pause' : 'Play'}</button>
-        <input
-          type="range"
-          min="0"
-          max="1"
-          step="0.1"
-          value={volume}
-          onChange={handleVolumeChange}
-        />
-        <div className="volume">{`Volume: ${Math.round(volume * 100)}%`}</div>
+        <div className="volume-control">
+          <input
+            type="range"
+            min="0"
+            max="1"
+            step="0.1"
+            value={volume}
+            onChange={handleVolumeChange}
+            className="volume-slider"
+          />
+          <div className="volume">{`Volume: ${Math.round(volume * 100)}%`}</div>
+        </div>
       </div>
+      {/* Miniplayer */}
+      <MiniPlayer metadata={metadata} isPlaying={isPlaying} handlePlayPause={handlePlayPause} />
     </div>
   );
 };
-
 
 export default CentovaStreamingPlayer;

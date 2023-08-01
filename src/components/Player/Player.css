@@ -1,0 +1,116 @@
+.centova-streaming-player {
+    text-align: center;
+  }
+  
+  .loading {
+    margin: 20px;
+  }
+  
+  .metadata {
+    font-size: 15px;
+    margin-bottom: 10px;
+  }
+  
+  .stream-details {
+    font-size: 12px;
+    margin-bottom: 20px;
+  }
+  
+  .controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .controls button {
+    margin-right: 10px;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .volume-control {
+    display: flex;
+    align-items: center;
+  }
+  
+  .volume-control .volume-slider {
+    margin-left: 10px;
+    width: 120px;
+  }
+  
+  .volume-control .volume {
+    font-size: 14px;
+    margin-left: 10px;
+  }
+ 
+  .volume-control {
+    display: none; /* Hide volume controls by default */
+  }
+  
+  @media (min-width: 768px) {
+    /* Apply styles for screens wider than 768px (e.g., tablets and desktops) */
+    .controls .volume-control {
+      display: flex; /* Show volume controls */
+    }
+  }
+  
+  .miniplayer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 50px;
+    background-color: #f2f2f2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+  }
+  
+  .miniplayer-controls button {
+    margin-right: 10px;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .miniplayer-metadata {
+    font-size: 14px;
+  }
+  .miniplayer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 50px;
+    background-color: #f2f2f2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+  }
+  
+  .miniplayer-controls button {
+    margin-right: 10px;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .miniplayer-metadata {
+    font-size: 14px;
+  }
