@@ -98,32 +98,18 @@ const CentovaStreamingPlayer = ({ streamUrl }) => {
           </div>
           <div className="controls-container">
           <div className="controls">
-          <button onClick={handlePlayPause}>
-  {isPlaying ? (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      fill="currentColor"
-      viewBox="0 0 45 45"
-    >
-      <path d="M6 18v12h8l10 10V8L14 18H6zm27 6c0-3.53-2.04-6.58-5-8.05v16.11c2.96-1.48 5-4.53 5-8.06zM28 6.46v4.13c5.78 1.72 10 7.07 10 13.41s-4.22 11.69-10 13.41v4.13c8.01-1.82 14-8.97 14-17.54S36.01 8.28 28 6.46z" />
-    </svg>
-  ) : (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="50"
-      height="50"
-      fill="currentColor"
-      viewBox="0 0 45 45"
-    >
-      <path d="M12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C21.9939 17.5203 17.5203 21.9939 12 22ZM13 8V16H15V8H13ZM9 8V16H11V8H9Z" fill="black"></path>
-    </svg>
-  )}
+          <button onClick={handlePlayPause} className="play-pause-button">
+  <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" viewBox="0 0 45 45">
+    <circle cx="22.5" cy="22.5" r="20" fill="#fcdf01"/>
+    {isPlaying ? (
+      <path fill="#0f9e48" d="M15 16h4v14h-4zm7 0h4v14h-4z" />
+    ) : (
+      <path fill="#0f9e48" d="M18 14l14 8-14 8z" />
+
+
+    )}
+  </svg>
 </button>
-
-
-  {/* Add other control buttons here */}
 </div>
 
             <div className="volume-control">

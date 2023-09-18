@@ -1,10 +1,15 @@
 .centova-streaming-player {
   text-align: center;
-  display: flex; /* Use flexbox for centering */
-  flex-direction: row; /* Stack the rows vertically */
+  display: flex;
+  flex-direction: column; /* Stack the children vertically */
   align-items: center; /* Center horizontally */
   justify-content: center; /* Center vertically */
-  min-height: 10vh; /* Make sure the container fills the viewport height */
+  min-height: 3vh; /* Adjust the height to your preference */
+  background-color: rgba(255, 255, 255, 0.2); /* Transparent white background */
+  border-radius: 10px; /* Rounded corners */
+  padding: 10px; /* Add some padding */
+  width: 40%; /* Adjust the width to your preference */
+  margin: 0 auto; /* Center horizontally */
 }
 
 .loading {
@@ -14,14 +19,12 @@
 .container {
   display: flex;
   flex-direction: row;
-  align-items: center; /* Center horizontally */
-  justify-content: center; /* Center vertically */
+  align-items: center;
+  justify-content: center;
   margin-top: 10px;
   margin-bottom: 20px;
-  width: 80%; /* Fill the container width */
+  width: 80%;
 }
-
-/* ... Other CSS rules remain the same ... */
 
 
 .metadata-container {
@@ -53,16 +56,31 @@
   
 }
 
-.controls button {
-  padding: 8px 12px;
-  border: none;
-  border-radius: 4px;
+.play-pause-button {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
   background-color: #0f9e48;
-  color: #ffffff;
-  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
-  margin-right: 10px;
+  transition: background-color 0.2s ease;
+  
 }
+
+.play-pause-button.playing {
+  background-color: #0f9e48; /* Keep it green when playing */
+}
+
+.play-pause-button svg {
+  width: 30px;
+  height: 30px;
+  fill: black; /* Set the icon color to black */
+}
+
+/* Add other styles as needed */
+
 
 .volume-control {
   display: flex;
@@ -118,19 +136,63 @@
 
 @media (min-width: 768px) {
   .controls-container {
+    display: flex;
     flex-direction: column;
+    align-items: center;
+  }
+
+  .controls {
+    display: flex;
+    flex-direction: row; /* Align volume slider and volume icon horizontally */
+    align-items: center; /* Center items horizontally */
+    justify-content: center; /* Center items vertically */
+    width: 100%; /* Make the controls container take the full width */
   }
 
   .controls button {
-    margin-right: 5px;
-    margin-right: -80px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #fcdf01;
+    color: #000;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    padding: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s ease;
     margin-bottom: 10px;
+  }
+
+  .controls button.playing {
+    background-color: #0f9e48;
+  }
+
+  .controls button.paused {
+    background-color: #0f9e48;
   }
 
   .volume-control {
     display: flex;
+    align-items: center; /* Center items horizontally */
+    margin-right: -50px;
+  }
+
+  .volume-control input[type="range"] {
+    margin-right: 10px; /* Add some right margin to separate the slider and volume icon */
+  }
+
+  .volume-control .volume {
+    font-size: 14px;
+    color: #e9bd0ce3;
+    margin-top: 3px;
   }
 }
+
+
 
 .miniplayer {
   position: fixed;
