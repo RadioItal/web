@@ -1,23 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 .brand-logo-container {
     display: flex;
     align-items: center;
   }
   
   .brand-logo {
-    width: 80px;
+    width: 200px;
     height: auto;
   }
   
   @media (max-width: 768px) {
     .brand-logo {
-      width: 60px;
+      height: 70px;
+      width: auto;
     }
   }
   
   .app__brand-name {
-    font-family: Yeasty-Flavors, sans-serif;
-    font-size: 60px;
-    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 90px;
     display: inline-flex;
     align-items: center;
   }
@@ -39,25 +40,18 @@
     }
   }
   
-  .app__brand-name--first {
-    color: green;
-  }
-  
-  .app__brand-name--second {
-    color: yellow;
-  }
-  
-  .app__brand-name--third {
-    color: red;
+  .app__brand-name {
+    
+    color: rgb(251, 255, 251);
   }
   
 
   .navbar {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 20px;
-    background-color: #f8f8f8;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+ 
   }
   
   .navbar-toggle {
@@ -91,7 +85,7 @@
   }
   
   .navbar-menu-list li a {
-    color: #555;
+    color: #e9bd0ce3;
     text-decoration: none;
   }
   

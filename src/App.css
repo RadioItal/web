@@ -1,3 +1,11 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: url('/src/assets/images/background1.svg') no-repeat center center fixed;
+  background-size: cover;
+  background-color: rgba(255, 255, 255, 0.9); /* Set background color with transparency */
+  font-family: sans-serif;
+}
 .App {
   text-align: center;
 }

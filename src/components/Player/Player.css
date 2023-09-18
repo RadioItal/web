@@ -1,116 +1,173 @@
 .centova-streaming-player {
-    text-align: center;
-  }
+  text-align: center;
+  display: flex; /* Use flexbox for centering */
+  flex-direction: row; /* Stack the rows vertically */
+  align-items: center; /* Center horizontally */
+  justify-content: center; /* Center vertically */
+  min-height: 10vh; /* Make sure the container fills the viewport height */
+}
+
+.loading {
+  margin: 20px;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  align-items: center; /* Center horizontally */
+  justify-content: center; /* Center vertically */
+  margin-top: 10px;
+  margin-bottom: 20px;
+  width: 80%; /* Fill the container width */
+}
+
+/* ... Other CSS rules remain the same ... */
+
+
+.metadata-container {
+  display: flex; /* Changed to flex */
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.metadata {
+  font-size: 15px;
+  color: #e9bd0ce3;
+  margin-right: 10px;
+}
+
+.stream-details {
+  font-size: 15px;
+  color: #e9bd0ce3;
+  margin-bottom: 20px;
+}
+
+.controls-container {
+  display: flex; /* Changed to flex */
+  flex-direction: row; /* Changed to row for side-by-side */
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-top: 10px; /* Adjusted margin */
+  margin-bottom: 20px;
   
-  .loading {
-    margin: 20px;
-  }
+}
+
+.controls button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  background-color: #0f9e48;
+  color: #ffffff;
+  font-size: 16px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.volume-control {
+  display: flex;
   
-  .metadata {
-    font-size: 15px;
+}
+.volume-control input[type="range"]::before {
+  background: linear-gradient(to right, #0f9e48 0%, #0f9e48 100%);
+}
+
+
+.volume-control .volume-slider {
+  width: 80px;
+  height: 4px;
+  border-radius: 2px;
+  background: linear-gradient(to right, #0f9e48 0%, #fcdf01 13%, #ff0000 var(--slider-position, 100%), #0f9e48 var(--slider-position, 0%), #ffffff 100%);
+  -webkit-appearance: none; /* Remove default styles (Webkit/Blink) */
+  appearance: none;
+  transition: background-color 0.2s ease; /* Add smooth transition */
+}
+/* Style the volume slider thumb */
+.volume-control .volume-slider::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Remove default styles (Webkit/Blink) */
+  appearance: none;
+  width: 12px;
+  height: 12px;
+  background-color: #ffffff; /* White color for thumb */
+  border: 2px solid #fff; /* Green color border */
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.volume-control .volume-slider::-moz-range-thumb {
+  width: 12px;
+  height: 12px;
+  background-color: #0f9e48; /* White color for thumb */
+  border: 2px solid #fff; /* Green color border */
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.volume-control .volume {
+  font-size: 14px;
+  color: #e9bd0ce3;
+  margin-right: 15px;
+  margin-top: -9px;
+  
+}
+
+.volume-control {
+  display: none;
+  
+}
+
+@media (min-width: 768px) {
+  .controls-container {
+    flex-direction: column;
+  }
+
+  .controls button {
+    margin-right: 5px;
+    margin-right: -80px;
     margin-bottom: 10px;
   }
-  
-  .stream-details {
-    font-size: 12px;
-    margin-bottom: 20px;
-  }
-  
-  .controls {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 20px;
-  }
-  
-  .controls button {
-    margin-right: 10px;
-    padding: 8px 12px;
-    border: none;
-    border-radius: 4px;
-    background-color: #007bff;
-    color: #fff;
-    font-size: 16px;
-    cursor: pointer;
-  }
-  
+
   .volume-control {
     display: flex;
-    align-items: center;
   }
-  
-  .volume-control .volume-slider {
-    margin-left: 10px;
-    width: 120px;
-  }
-  
-  .volume-control .volume {
-    font-size: 14px;
-    margin-left: 10px;
-  }
- 
-  .volume-control {
-    display: none; /* Hide volume controls by default */
-  }
-  
-  @media (min-width: 768px) {
-    /* Apply styles for screens wider than 768px (e.g., tablets and desktops) */
-    .controls .volume-control {
-      display: flex; /* Show volume controls */
-    }
-  }
-  
-  .miniplayer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 50px;
-    background-color: #f2f2f2;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 10px;
-  }
-  
-  .miniplayer-controls button {
-    margin-right: 10px;
-    padding: 8px 12px;
-    border: none;
-    border-radius: 4px;
-    background-color: #007bff;
-    color: #fff;
-    font-size: 16px;
-    cursor: pointer;
-  }
-  
-  .miniplayer-metadata {
-    font-size: 14px;
-  }
-  .miniplayer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 50px;
-    background-color: #f2f2f2;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 10px;
-  }
-  
-  .miniplayer-controls button {
-    margin-right: 10px;
-    padding: 8px 12px;
-    border: none;
-    border-radius: 4px;
-    background-color: #007bff;
-    color: #fff;
-    font-size: 16px;
-    cursor: pointer;
-  }
-  
-  .miniplayer-metadata {
-    font-size: 14px;
-  }
+}
+
+.miniplayer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 50px;
+  background-color: #f2f2f2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px;
+}
+
+.miniplayer-controls button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  background-color: #0a8e03;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.miniplayer-metadata {
+  font-size: 14px;
+  color: #e9bd0ce3;
+}
+
+.image-placeholder {
+  width: 90px;
+  height: 90px;
+  background-color: #ccc;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  font-size: 14px;
+  color: #e9bd0ce3;
+
+}

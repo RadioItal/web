@@ -2,10 +2,11 @@ import React from 'react';
 import { auth } from "../../Firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
 import Footer from '../Footer/Footer.jsx';
-import StreamingPlayer from '../Player/StreamingPlayer.js';
+
 import Slider from './Slider';
 import ChatBox from '../Chat/Chatbox.js';
 import Welcome from '../Chat/Welcome.js';
+
 
 
 const HomePage = () => {
@@ -47,16 +48,14 @@ const HomePage = () => {
 
   return (
     <div className="home-page">
-      <div className="home-content">
-        <h1>Radio Ital</h1>
-        <Slider slides={slides} autoSlideDelay={3000} />
-        <StreamingPlayer streamUrl="https://cast4.my-control-panel.com/proxy/radioita/stream" />
-        <Footer />
-      </div>        
-        {!user ? <Welcome /> : <ChatBox />}
-      <div className="home-chat">
+        <div className="home-content">
+        <div className="home-chat">
+          <Slider slides={slides} autoSlideDelay={3000} />
+          {!user ? <Welcome /> : <ChatBox />}
+          <Footer />
+        </div>
+        </div>
       </div>
-    </div>
   );
 };
 

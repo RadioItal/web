@@ -1,0 +1,7 @@
+/* HomePage.css */
+.hero-container {
+    background: url('/src/assets/images/background1.svg') no-repeat center center fixed;
+    background-size: cover;
+    /* Other styling properties for the hero section */
+  }
+  
