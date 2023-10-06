@@ -9,6 +9,7 @@ import {
 import { db, auth } from "../../Firebase";
 import Message from "./Message";
 import SendMessage from "./SendMessage";
+import Logo from "../../assets/images/logo_radioital_negro.png";
 import './Chat.css';
 import Fab from '@mui/material/Fab';
 import ChatIcon from '@mui/icons-material/Chat';
@@ -19,28 +20,7 @@ const ChatBox = () => {
     const scroll = useRef();
     const [toggle, setToggle] = useState("");
     const expand = toggle ? "open" : "";
-    /*
-    const listAllUsers = (nextPageToken) => {
-    // List batch of users, 1000 at a time.
-    getAuth()
-        .listUsers(1000, nextPageToken)
-        .then((listUsersResult) => {
-            listUsersResult.users.forEach((userRecord) => {
-                console.log('user', userRecord.toJSON());
-            });
-            if (listUsersResult.pageToken) {
-                // List next batch of users.
-                listAllUsers(listUsersResult.pageToken);
-            }
-        })
-        .catch((error) => {
-            console.log('Error listing users:', error);
-        });
-    };
-    // Start listing users from the beginning, 1000 at a time.
-    listAllUsers();
-    */
-
+    
     useEffect(() => {
         const q = query(
             collection(db, "messages"),
@@ -72,7 +52,12 @@ const ChatBox = () => {
                 {!toggle ? "ABRIR CHAT" : "CERRAR CHAT" }
             </Fab>
             <div className={`navBox ${expand} chat-box`}>
-                <h3>Chat RadioItal.com</h3>
+                <div className="header_chat">
+                    <h3>Chat RadioItal.com</h3>
+                    <div className="logo">
+                        <img src={Logo} alt="Radioital logo" width={50} height={50} />
+                    </div>
+                </div>
                 <div className="messages-wrapper">
                     {messages.map((message) => (
                         <Message key={message.id} message={message} />

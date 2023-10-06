@@ -1,6 +1,8 @@
 .sign-in {
     border: none;
     background-color: transparent;
+    position: absolute;
+    left: 9em;
 }
 .sign-in > img {
     height: 30px;
@@ -28,7 +30,7 @@
   
 /* chat component */
 .messages-wrapper {
-    padding: 0 15px 0 33px;
+    padding: 0 15px 70px 33px;
     overflow-y: auto;
     width: 100%;
 }
@@ -72,11 +74,11 @@
   
 /* send message */
 .send-message {
-    position: relative;
+    position: absolute;
     bottom: 0px;
-    width: 98%;
-    padding: 9px 6px;
-    background-color: #000000;
+    width: 95%;
+    padding: 9px 9px 9px 28px;
+    background-color: #000;
     display: flex;
 }
 .send-message > textarea {
@@ -124,7 +126,14 @@
 .navBox h3{
     color:white;
     -webkit-backdrop-filter: blur(5px);
-  backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+}
+
+.navBox p.txt_ini {
+    padding: 1em;
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
 }
   
 .open {
@@ -133,6 +142,9 @@
 
 .collapse {
     transition: ease-out 1s;
+    -moz-transition: ease-out 1s;
+    -webkit-transition: ease-out 1s;
+    -o-transition: ease-out 1s;
 }
 
 .btnChat{
@@ -142,4 +154,21 @@
     background-color: #169449 !important;
     color: white !important;
     left: 0 !important;
+    width: auto;
+}
+
+.logo {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+@media(max-width:767px) {
+    .btnChat {
+        width: 100% !important;
+    }
+    .open {
+        width:95%;
+        height:95%;
+    }
 }
